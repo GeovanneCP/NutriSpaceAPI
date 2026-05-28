@@ -1,11 +1,11 @@
-🛰️ NutriSpace API — Sistema de Monitoramento de Estufas Espaciais
+### 🛰️ NutriSpace API — Sistema de Monitoramento de Estufas Espaciais
 Projeto Acadêmico desenvolvido para a FIAP > Arquitetura: Web API RESTful com .NET 10 & Entity Framework Core
 
 Banco de Dados: Oracle Database (via ODP.NET Managed Driver)
 
 Status do Ambiente: 🟢 Banco de Dados Cloud FIAP já sincronizado e ativo de ponta a ponta.
 
-📖 1. O que é o Projeto e para que serve?
+### 📖 1. O que é o Projeto e para que serve?
 O NutriSpace é um ecossistema tecnológico projetado para viabilizar e automatizar a agricultura de precisão em colônias espaciais ou estações orbitais de longa permanência. Em ambientes extraterrestres, o controle climático rigoroso é vital: pequenas oscilações de temperatura ou umidade podem colapsar um microbioma vegetal inteiro, comprometendo o suprimento de oxigênio e alimentos dos tripulantes.
 
 A NutriSpace API atua como o cérebro central (Backend) desse ecossistema. Ela cumpre os seguintes papéis fundamentais:
@@ -16,7 +16,7 @@ Orquestração de Regras Biológicas: Vincula cada estufa automatizada a uma esp
 
 Auditoria e Governança Espacial: Permite que astronautas operadores controlem os atuadores (como bombas de irrigação) e extraiam relatórios completos com o histórico de comportamento climático de cada bioma.
 
-🛠️ 2. O que instalar na Máquina (Pré-requisitos)
+### 🛠️ 2. O que instalar na Máquina (Pré-requisitos)
 Para compilar, rodar e debugar este projeto localmente, certifique-se de instalar as seguintes ferramentas:
 
 SDK do .NET 10 (ou superior)
@@ -31,7 +31,7 @@ Caso use o Visual Studio, selecione a carga de trabalho: "Desenvolvimento web e 
 
 Navegador Web Moderno (Chrome, Edge ou Firefox) para visualização e testes na interface gráfica do Swagger UI.
 
-📁 3. Estrutura do Projeto (Pastas e Arquivos Explicados)
+### 📁 3. Estrutura do Projeto (Pastas e Arquivos Explicados)
 A arquitetura do projeto segue o padrão oficial do ASP.NET Core Web API, segmentando responsabilidades em pastas bem definidas:
 
 NutriSpaceAPI/
@@ -57,10 +57,10 @@ Detalhamento por Pasta:
 
 📁 Models/: Contém o coração das regras de negócio do projeto. São as entidades de domínio (Astronauta, Estufa, Planta, LeituraSensor) com suas propriedades e anotações de dados ([Table], [Key], [ForeignKey]).
 
-🔌 4. Catálogo Completo de Endpoints (Documentação das Rotas REST)
+### 🔌 4. Catálogo Completo de Endpoints (Documentação das Rotas REST)
 A API adota o padrão de rotas RESTful baseado em recursos e utiliza códigos de status HTTP semânticos (200 OK, 201 Created, 404 Not Found, 500 Internal Server Error).
 
-🛰️ Recurso: Astronauta (/api/Astronauta)
+### 🛰️ Recurso: Astronauta (/api/Astronauta)
 Gerencia o cadastro de operadores humanos responsáveis pelo monitoramento e intervenções nas estufas.
 
 GET /api/Astronauta (Obter Todos)
@@ -89,7 +89,7 @@ DELETE /api/Astronauta/{id} (Remover)
 
 O que faz: Exclui permanentemente o registro de um astronauta do banco (desde que ele não esteja atrelado ativamente a nenhuma estufa operacional).
 
-🌿 Recurso: Planta (/api/Planta)
+### 🌿 Recurso: Planta (/api/Planta)
 Dita as assinaturas biológicas e limites climáticos de sobrevivência da flora espacial.
 
 GET /api/Planta (Obter Todas)
@@ -112,7 +112,7 @@ DELETE /api/Planta/{id} (Remover)
 
 O que faz: Remove a espécie da base de conhecimento da inteligência da API.
 
-🛡️ Recurso: Estufa (/api/Estufa)
+### 🛡️ Recurso: Estufa (/api/Estufa)
 O recurso central. Cruza os dados do Astronauta responsável e da Planta cultivada. Possui relacionamento 1:N com os dados de sensores.
 
 GET /api/Estufa (Obter Todas)
@@ -137,7 +137,7 @@ DELETE /api/Estufa/{id} (Desativar)
 
 O que faz: Apaga o registro físico da estufa do mapa de monitoramento.
 
-🌡️ Recurso: Leitura do Sensor (/api/LeituraSensor)
+### 🌡️ Recurso: Leitura do Sensor (/api/LeituraSensor)
 Responsável pela ingestão massiva de dados vinda do hardware IoT da estação espacial.
 
 GET /api/LeituraSensor/{id} (Obter Registro Temporário)
@@ -148,7 +148,7 @@ POST /api/LeituraSensor (Inserir Telemetria IoT)
 
 O que faz: Valida de forma segura a existência do alvo (IdEstufa) utilizando checagem de nulidade compatível com bancos Oracle. Se a estufa existir, insere os dados brutos de temperatura e umidade lidos pelo dispositivo. A data e hora exatas (DtHrLeitura) são preenchidas de forma autônoma pelo servidor de banco de dados via gatilho de valor padrão SQL (SYSDATE).
 
-🚀 5. Como Executar o Projeto (Guia de Execução Simplificada)
+### 🚀 5. Como Executar o Projeto (Guia de Execução Simplificada)
 Como o projeto já se encontra configurado de forma nativa com as credenciais de acesso oficiais e as tabelas já foram integralmente propagadas na nuvem Oracle da FIAP, a inicialização local exige apenas 2 passos simples:
 
 Passo 1: Restaurar Pacotes e Dependências
