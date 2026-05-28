@@ -3,8 +3,6 @@ Projeto Acadêmico desenvolvido para a FIAP > Arquitetura: Web API RESTful com .
 
 Banco de Dados: Oracle Database (via ODP.NET Managed Driver)
 
-Status do Ambiente: 🟢 Banco de Dados Cloud FIAP já sincronizado e ativo de ponta a ponta.
-
 ### 📖 1. O que é o Projeto e para que serve?
 O NutriSpace é um ecossistema tecnológico projetado para viabilizar e automatizar a agricultura de precisão em colônias espaciais ou estações orbitais de longa permanência. Em ambientes extraterrestres, o controle climático rigoroso é vital: pequenas oscilações de temperatura ou umidade podem colapsar um microbioma vegetal inteiro, comprometendo o suprimento de oxigênio e alimentos dos tripulantes.
 
@@ -35,16 +33,22 @@ Navegador Web Moderno (Chrome, Edge ou Firefox) para visualização e testes na 
 A arquitetura do projeto segue o padrão oficial do ASP.NET Core Web API, segmentando responsabilidades em pastas bem definidas:
 
 NutriSpaceAPI/
-│
-├── 📁 Controllers/         # Camada de Exposição (Endpoints REST/HTTP)
-├── 📁 Data/                # Camada de Persistência e Contexto do EF Core
-├── 📁 DTOs/                # Objetos de Transferência de Dados (Data Transfer Objects)
-├── 📁 Migrations/          # Histórico de Controle de Versão do Banco de Dados
-├── 📁 Models/              # Entidades do Domínio (Mapeamento de Tabelas)
-│
-├── 📄 appsettings.json     # Arquivo de Configuração (Strings de Conexão e Logs)
-├── 📄 NutriSpaceAPI.csproj # Arquivo de Definição do Projeto e Pacotes NuGet
-└── 📄 Program.cs           # Inicializador (Bootstrap) da API e Injeção de Dependências
+
+ 📁 Controllers/         # Camada de Exposição (Endpoints REST/HTTP)
+
+ 📁 Data/                # Camada de Persistência e Contexto do EF Core
+
+ 📁 DTOs/                # Objetos de Transferência de Dados (Data Transfer Objects)
+ 
+ 📁 Migrations/          # Histórico de Controle de Versão do Banco de Dados
+
+ 📁 Models/              # Entidades do Domínio (Mapeamento de Tabelas)
+
+ 📄 appsettings.json     # Arquivo de Configuração (Strings de Conexão e Logs)
+ 
+ 📄 NutriSpaceAPI.csproj # Arquivo de Definição do Projeto e Pacotes NuGet
+ 
+ 📄 Program.cs           # Inicializador (Bootstrap) da API e Injeção de Dependências
 
 Detalhamento por Pasta:
 📁 Controllers/: Contém as classes que herdam de ControllerBase. Elas recebem as requisições HTTP externas da internet, validam as regras básicas de entrada e conversam com o banco de dados para devolver respostas JSON.
